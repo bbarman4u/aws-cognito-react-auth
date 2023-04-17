@@ -43,13 +43,14 @@ const Signup: React.FC = () => {
     }
     try {
       await Auth.signUp({
-        username: email,
+        //username: email.split('@')[0],
+        username: name,
         password: confirmPassword,
         attributes: {
-          email,
-          name,
+          email: email,
+          //name,
           phone_number: phone,
-          "custom:company": company,
+          //"custom:company": company,
         },
       });
       Toast("Success!!", "Signup was successful", "success");
@@ -74,9 +75,9 @@ const Signup: React.FC = () => {
         {" "}
         New Account Registration
       </h1>
-      <Field label="Name" {...bindName} />
+      <Field label="User Name" {...bindName} />
       <Field label="Email" {...bindEmail} type="email" />
-      <Field label="Phone" {...bindPhone} type="tel" />
+      <Field label="Phone (Format: +171234567891)" {...bindPhone} type="tel" />
       <Field label="Company" {...bindCompany} />
       <Field label="Password" type="password" {...bindPassword} />
       <Field

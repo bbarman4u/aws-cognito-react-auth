@@ -21,3 +21,7 @@ run `yarn build` in the root directory
 ## About AWS Cognito
 
 AWS Cognito is a managed authentication service by AWS. To use it's APIs we use [AWS Amplify SDK](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#create-authentication-service). AWS Amplify is the AWS counterpart of Google's Firebase.
+
+# Using YARN
+
+yarn upgrade --latest --pattern aws-amplify
