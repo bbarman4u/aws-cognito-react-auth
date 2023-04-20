@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Card from "@material-ui/core/Card";
-//import Amplify from "aws-amplify";
 import { Amplify } from 'aws-amplify'
 import Signup from "./components/Signup";
 import Confirmation from "./components/Confirmation";

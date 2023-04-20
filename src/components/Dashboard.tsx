@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
   const goToLinkedIn = () => {
     const a = document.createElement("a");
     a.target = "_blank";
-    a.href = "https://www.linkedin.com/in/mubbashir10/";
+    a.href = "https://www.linkedin.com/";
     a.click();
   };
 
@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
     <>
       <LockIcon /> <p>This is a private (auth protected) page. </p>
       <p style={{ fontSize: 12, marginBottom: "20px" }}>
-        Thanks for following along, happy coding!{" "}
+        Thanks for signing in, happy coding!{" "}
       </p>
       <Button
         variant="contained"
@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
         style={{ marginRight: "20px" }}
         onClick={goToLinkedIn}
       >
-        <LinkedInIcon /> My LinkedIn Profile
+        <LinkedInIcon /> Linked Page
       </Button>
       <Button variant="contained" color="default" onClick={handleLogout}>
         <ExitToAppIcon /> Logout

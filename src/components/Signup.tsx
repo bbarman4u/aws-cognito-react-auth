@@ -22,10 +22,10 @@ const Signup: React.FC = () => {
 
   const history = useHistory();
 
-  const { value: name, bind: bindName } = useInput("");
+  const { value: username, bind: bindUserName } = useInput("");
   const { value: email, bind: bindEmail } = useInput("");
   const { value: phone, bind: bindPhone } = useInput("");
-  const { value: company, bind: bindCompany } = useInput("");
+  const { value: businessPartner, bind: bindBusinessPartner } = useInput("");
   const { value: password, bind: bindPassword } = useInput("");
   const { value: confirmPassword, bind: bindConfirmPassword } = useInput("");
 
@@ -44,13 +44,14 @@ const Signup: React.FC = () => {
     try {
       await Auth.signUp({
         //username: email.split('@')[0],
-        username: name,
+        username: username,
         password: confirmPassword,
         attributes: {
+          //preferred_username: username,
           email: email,
-          //name,
+          name: email.split('@')[0],
           phone_number: phone,
-          //"custom:company": company,
+          "custom:person_bp": businessPartner,
         },
       });
       Toast("Success!!", "Signup was successful", "success");
@@ -75,10 +76,10 @@ const Signup: React.FC = () => {
         {" "}
         New Account Registration
       </h1>
-      <Field label="User Name" {...bindName} />
+      <Field label="User Name" {...bindUserName} />
       <Field label="Email" {...bindEmail} type="email" />
-      <Field label="Phone (Format: +171234567891)" {...bindPhone} type="tel" />
-      <Field label="Company" {...bindCompany} />
+      <Field label="Phone (Format: +171234567890)" {...bindPhone} type="tel" />
+      <Field label="BP" {...bindBusinessPartner} />
       <Field label="Password" type="password" {...bindPassword} />
       <Field
         label="Confirm Password"
